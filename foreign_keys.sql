@@ -40,6 +40,13 @@ SELECT origin, destination, name FROM flights JOIN passengers ON passengers.flig
 SELECT origin, destination, name FROM flights LEFT JOIN passengers ON passengers.flight_id = flight_id; --LEFT join
 --RIGHT  join
 
+
 --CREATE INDEX
 
+-- SELECT + nested sql queries
 
+SELECT flight_id FROM passengers GROUP BY flight_id HAVING COUNT(*) > 1; -- select flight_id only if it has more than 1 passenger on it
+
+SELECT * FROM flights WHERE id IN 
+(SELECT flight_id FROM passengers 
+GROUP BY flight_id HAVING COUNT(*) > 1); -- select flight_id only if it has more than 1 passenger on it
