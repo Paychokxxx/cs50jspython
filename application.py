@@ -51,5 +51,5 @@ def flight(flight_id):
         return render_template("error.html", message="No such flight")
 
     #Get all passengers
-    passengers = Passenger.query.filter_by(flight_id=flight_id).all()
+    passengers = flight.passengers
     return render_template("flight.html", flight=flight, passengers=passengers)
