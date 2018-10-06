@@ -1,4 +1,4 @@
---postgress 9.3`
+--postgress 9.3
 
 CREATE TABLE flights (
     id SERIAL PRIMARY KEY,
