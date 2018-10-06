@@ -1,3 +1,7 @@
+# set FLASK_APP=application  cdn.cs50.net/web/2018/spring/lectures/4/src4/ 
+# set FLASK_ENV=development
+# flask run
+
 from flask import Flask, render_template, request
 from models import *
 
@@ -27,10 +31,8 @@ def book():
     if flight is None:
         return render_template("error.html", message="No such flight with that id.")
 
-    #Add passenger
-    passenger = Passenger(name=name, flight_id=flight_id)
-    db.session.add(passenger)
-    db.session.commit()
+    #Add passenger  
+    flight.add_passenger(name)
     return render_template("success.html")
 
 @app.route("/flights")
