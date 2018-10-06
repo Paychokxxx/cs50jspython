@@ -13,4 +13,4 @@ class FligPassengers(db.Model):
     __tablename__ = "passengers"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
-    flight_id = db.Column(db.Integer, db.ForeignKey("flights.id"), nullable=False)
+flight_id = db.Column(db.Integer, db.ForeignKey("flights.id"), nullable=False)
